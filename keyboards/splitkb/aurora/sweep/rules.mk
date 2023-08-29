@@ -15,3 +15,4 @@
 
 DEFAULT_FOLDER = splitkb/aurora/sweep/rev1
 CONVERT_TO=liatris
+SRC+=functions.c
