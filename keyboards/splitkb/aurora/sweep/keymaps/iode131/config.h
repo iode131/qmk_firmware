@@ -22,7 +22,7 @@
 #    define RGB_MATRIX_KEYPRESSES
 #    define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 #    define ENABLE_RGB_MATRIX_SOLID_SPLASH
-#    define ENABLE_RGB_MATRIX_RAINBOW_BEACON 
+#    define ENABLE_RGB_MATRIX_RAINBOW_BEACON
 #endif
 
 // Not yet available in `keymap.json` format
@@ -32,3 +32,6 @@
      // The default is 40
 #    define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 #endif
+SRC += "functions.c"
+
+
