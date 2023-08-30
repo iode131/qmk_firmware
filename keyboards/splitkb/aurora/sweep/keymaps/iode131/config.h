@@ -32,6 +32,6 @@
      // The default is 40
 #    define MOUSEKEY_WHEEL_TIME_TO_MAX 100
 #endif
-//SRC += "functions.c"
 
+#define COMBO_COUNT 2
 

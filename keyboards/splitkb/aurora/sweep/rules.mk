@@ -14,5 +14,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 DEFAULT_FOLDER = splitkb/aurora/sweep/rev1
-CONVERT_TO=liatris
-SRC+=functions.c
+CONVERT_TO = liatris
+TAP_DANCE_ENABLE = yes
+COMBO_ENABLE = yes
+SRC += functions.c
+INTROSPECTION_KEYMAP_C = combos.c

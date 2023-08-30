@@ -52,10 +52,4 @@
         "delay": 100,
         "wheel_delay": 100
     },
-    "tapping": {
-        "term": 200,
-        "permissive_hold": true,
-        "ignore_mod_tap_interrupt": true,
-        "force_hold": true
-    }
 }
