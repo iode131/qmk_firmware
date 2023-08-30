@@ -1,47 +1,6 @@
 
 #include QMK_KEYBOARD_H
 
-const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [0] = LAYOUT_moonlander(
-    KC_Q              , KC_W              , KC_F              , KC_P              , KC_B          , KC_J          , KC_L              , KC_U              , KC_Y              , KC_SCLN,
-    MT(MOD_LALT, KC_A), MT(MOD_LCTL, KC_R), MT(MOD_LGUI, KC_S), MT(MOD_LSFT, KC_T), KC_G          , KC_M          , MT(MOD_RSFT, KC_N), MT(MOD_RGUI, KC_E), MT(MOD_RCTL, KC_I), MT(MOD_RALT, KC_O),
-    KC_Z              , KC_X              , KC_C              , KC_D              , KC_V          , KC_K          , KC_H              , KC_COMM           , KC_DOT            , KC_SLSH
-                                                              , MO(1)             , KC_SPC        , MO(3)         , MO(2)
-  ),
-  [1] = LAYOUT_moonlander(
-    KC_TRNS    , KC_DQUO              , KC_LCBR              , KC_RCBR              , KC_TILD       , KC_TRNS       , KC_COLN              , KC_EQUAL             , KC_PLUS              , KC_ASTR,
-    TD(DANCE_0), MT(MOD_LCTL, KC_QUOT), MT(MOD_LGUI, KC_LPRN), MT(MOD_LSFT, KC_RPRN), KC_PIPE       , KC_ASTR       , MT(MOD_RSFT, KC_MINS), MT(MOD_RGUI, KC_UNDS), MT(MOD_RCTL, KC_QUES), MT(MOD_RALT, KC_HASH),
-    KC_PERC    , KC_TRNS              , KC_LBRC              , KC_RBRC              , KC_GRV        , KC_AMPR       , KC_EXLM              , KC_CIRC              , KC_DLR               , KC_BSLS,
-                                                               KC_TRNS              , KC_ENT        , KC_ENT        , KC_BSPC
-  ),
-  [2] = LAYOUT_moonlander(
-    KC_TRNS, KC_TRNS, KC_TRNS          , KC_TRNS            , KC_TRNS      , KC_TRNS, KC_HOME, KC_UP  , KC_END , KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_MEDIA_STOP    , KC_MEDIA_PLAY_PAUSE, KC_AUDIO_MUTE, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP    , KC_TRNS      , KC_PGDN, KC_CIRC, KC_DEL , KC_DLR , KC_TRNS,
-                                         KC_DEL             , KC_TAB       , KC_TRNS, KC_TRNS
-  ),
-  [3] = LAYOUT_moonlander(
-    KC_TRNS             , KC_TRNS            , KC_F13             , KC_F12             , KC_F11, KC_TRNS  , KC_7              , KC_8              , KC_9              , KC_TRNS,
-    MT(MOD_LALT, KC_F10), MT(MOD_LCTL, KC_F9), MT(MOD_LGUI, KC_F8), MT(MOD_LSFT, KC_F7), KC_F6 , KC_KP_DOT, MT(MOD_RSFT, KC_4), MT(MOD_RGUI, KC_5), MT(MOD_RCTL, KC_6), MT(MOD_RALT, KC_TRNS),
-    KC_F5               , KC_F4              , KC_F3              , KC_F2              , KC_F1 , KC_0     , KC_1              , KC_2              , KC_3              , KC_TRNS,
-                                                                    RGB_RMOD           , KC_TRNS          , KC_TRNS           , KC_TRNS
-  ),
-  [4] = LAYOUT_moonlander(
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, LGUI(KC_1),     TD(DANCE_6),    LGUI(KC_7),     LGUI(KC_0),     KC_I,           KC_TRANSPARENT,                                 KC_TRANSPARENT, KC_S,           KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_LEFT,        KC_RIGHT,       TD(DANCE_7),    TD(DANCE_8),    KC_U,           KC_TRANSPARENT,                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_R,           KC_C,           KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, LSFT(KC_LEFT),  LSFT(KC_RIGHT), KC_O,           KC_P,           KC_D,                                           KC_TRANSPARENT, KC_MINUS,       KC_PLUS,        KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_E,           KC_TRANSPARENT,                                                                                                 KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
-    TD(DANCE_9),    KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_TRANSPARENT, TO(0)
-  ),
-};
-const uint16_t PROGMEM combo0[] = { MT(MOD_RSFT, KC_N), MT(MOD_RGUI, KC_E), MT(MOD_RCTL, KC_I), MT(MOD_RALT, KC_O), COMBO_END};
-const uint16_t PROGMEM combo1[] = { MT(MOD_LSFT, KC_T), MT(MOD_RSFT, KC_N), COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-    COMBO(combo0, KC_ESCAPE),
-    COMBO(combo1, KC_CAPS_LOCK),
-};
 enum tap_dance_codes {
   DANCE_0,
   DANCE_1,
@@ -53,6 +12,47 @@ enum tap_dance_codes {
   DANCE_7,
   DANCE_8,
   DANCE_9,
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  [0] = LAYOUT(
+    KC_Q              , KC_W              , KC_F              , KC_P              , KC_B          , KC_J          , KC_L              , KC_U              , KC_Y              , KC_SCLN,
+    MT(MOD_LALT, KC_A), MT(MOD_LCTL, KC_R), MT(MOD_LGUI, KC_S), MT(MOD_LSFT, KC_T), KC_G          , KC_M          , MT(MOD_RSFT, KC_N), MT(MOD_RGUI, KC_E), MT(MOD_RCTL, KC_I), MT(MOD_RALT, KC_O),
+    KC_Z              , KC_X              , KC_C              , KC_D              , KC_V          , KC_K          , KC_H              , KC_COMM           , KC_DOT            , KC_SLSH
+                                                              , MO(1)             , KC_SPC        , MO(3)         , MO(2)
+  ),
+  [1] = LAYOUT(
+    KC_TRNS    , KC_DQUO              , KC_LCBR              , KC_RCBR              , KC_TILD       , KC_TRNS       , KC_COLN              , KC_EQUAL             , KC_PLUS              , KC_ASTR,
+    TD(DANCE_0), MT(MOD_LCTL, KC_QUOT), MT(MOD_LGUI, KC_LPRN), MT(MOD_LSFT, KC_RPRN), KC_PIPE       , KC_ASTR       , MT(MOD_RSFT, KC_MINS), MT(MOD_RGUI, KC_UNDS), MT(MOD_RCTL, KC_QUES), MT(MOD_RALT, KC_HASH),
+    KC_PERC    , KC_TRNS              , KC_LBRC              , KC_RBRC              , KC_GRV        , KC_AMPR       , KC_EXLM              , KC_CIRC              , KC_DLR               , KC_BSLS,
+                                                               KC_TRNS              , KC_ENT        , KC_ENT        , KC_BSPC
+  ),
+  [2] = LAYOUT(
+    KC_TRNS, KC_TRNS, KC_TRNS          , KC_TRNS            , KC_TRNS      , KC_TRNS, KC_HOME, KC_UP  , KC_END , KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_MEDIA_STOP    , KC_MEDIA_PLAY_PAUSE, KC_AUDIO_MUTE, KC_PGUP, KC_LEFT, KC_DOWN, KC_RGHT, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_AUDIO_VOL_DOWN, KC_AUDIO_VOL_UP    , KC_TRNS      , KC_PGDN, KC_CIRC, KC_DEL , KC_DLR , KC_TRNS,
+                                         KC_DEL             , KC_TAB       , KC_TRNS, KC_TRNS
+  ),
+  [3] = LAYOUT(
+    KC_TRNS             , KC_TRNS            , KC_F13             , KC_F12             , KC_F11, KC_TRNS  , KC_7              , KC_8              , KC_9              , KC_TRNS,
+    MT(MOD_LALT, KC_F10), MT(MOD_LCTL, KC_F9), MT(MOD_LGUI, KC_F8), MT(MOD_LSFT, KC_F7), KC_F6 , KC_KP_DOT, MT(MOD_RSFT, KC_4), MT(MOD_RGUI, KC_5), MT(MOD_RCTL, KC_6), MT(MOD_RALT, KC_TRNS),
+    KC_F5               , KC_F4              , KC_F3              , KC_F2              , KC_F1 , KC_0     , KC_1              , KC_2              , KC_3              , KC_TRNS,
+                                                                    RGB_RMOD           , KC_TRNS          , KC_TRNS           , KC_TRNS
+  ),
+  [4] = LAYOUT(
+    LGUI(KC_1),     TD(DANCE_6),    LGUI(KC_7),     LGUI(KC_0),     KC_I,   KC_S,           KC_TRANSPARENT, KC_NO,          KC_TRANSPARENT, KC_TRANSPARENT,
+    KC_LEFT,        KC_RIGHT,       TD(DANCE_7),    TD(DANCE_8),    KC_U,   KC_TRANSPARENT, KC_TRANSPARENT, KC_R,           KC_C,           KC_NO,          KC_TRANSPARENT,
+    LSFT(KC_LEFT),  LSFT(KC_RIGHT), KC_O,           KC_P,           KC_D,   KC_MINUS,       KC_PLUS,        KC_TRANSPARENT, KC_TRANSPARENT,
+     KC_TRANSPARENT, KC_E,           KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT, KC_TRANSPARENT,
+    TD(DANCE_9),    KC_TRANSPARENT, KC_TRANSPARENT,                 KC_TRANSPARENT, KC_TRANSPARENT, TO(0)
+  ),
+};
+const uint16_t PROGMEM combo0[] = { MT(MOD_RSFT, KC_N), MT(MOD_RGUI, KC_E), MT(MOD_RCTL, KC_I), MT(MOD_RALT, KC_O), COMBO_END};
+const uint16_t PROGMEM combo1[] = { MT(MOD_LSFT, KC_T), MT(MOD_RSFT, KC_N), COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(combo0, KC_ESCAPE),
+    COMBO(combo1, KC_CAPS_LOCK),
 };
 
 typedef struct {
