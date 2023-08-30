@@ -22,8 +22,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                               , MO(1)             , KC_SPC        , MO(3)         , MO(2)
   ),
   [1] = LAYOUT(
-    KC_TRNS    , KC_DQUO              , KC_LCBR              , KC_RCBR              , KC_TILD       , KC_TRNS       , KC_COLN              , KC_EQUAL             , KC_PLUS              , KC_ASTR,
-    TD(DANCE_0), MT(MOD_LCTL, KC_QUOT), MT(MOD_LGUI, KC_LPRN), MT(MOD_LSFT, KC_RPRN), KC_PIPE       , KC_ASTR       , MT(MOD_RSFT, KC_MINS), MT(MOD_RGUI, KC_UNDS), MT(MOD_RCTL, KC_QUES), MT(MOD_RALT, KC_HASH),
+    KC_TRNS    , KC_DQUO              , KC_LCBR              , KC_RCBR              , KC_TILD       , TO(4)         , KC_COLN              , KC_EQUAL             , KC_PLUS              , KC_ASTR,
+    TD(DANCE_0), MT(MOD_LCTL, KC_QUOT), TD(DANCE_1)          , TD(DANCE_2)          , KC_PIPE       , KC_ASTR       , MT(MOD_RSFT, KC_MINS), TD(DANCE_3)          , TD(DANCE_4)          , TD(DANCE_5),
     KC_PERC    , KC_TRNS              , KC_LBRC              , KC_RBRC              , KC_GRV        , KC_AMPR       , KC_EXLM              , KC_CIRC              , KC_DLR               , KC_BSLS,
                                                                KC_TRNS              , KC_ENT        , KC_ENT        , KC_BSPC
   ),
